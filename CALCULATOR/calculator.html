@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>计算机</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            width: 400px;
+            margin: 30px auto;
+        }
+
+        table tr td {
+            width: 100px;
+            height: 52px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        td input[type=button] {
+            width: 99%;
+            height: 99%;
+            font-size: 32px;
+            background: #ddd;
+            border: none;
+        }
+
+        td input[type=text] {
+            width: 99%;
+            height: 99%;
+            text-align: right;
+            font-size: 32px;
+        }
+
+        #show {
+            margin-bottom: 10px;
+        }
+
+        .btn:hover {
+            background: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellspacing="0" cellpadding="0">
+        <tr>
+            <td colspan="4"><input type="text" disabled id="show" value="" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input class="btn" type="button" id="" value="DEL" /> </td>
+            <td colspan="2"><input class="btn" type="button" id="" value="C" /> </td>
+        </tr>
+        <tr>
+            <td><input class="btn" type="button" value="1" /></td>
+            <td><input class="btn" type="button" value="2" /></td>
+            <td><input class="btn" type="button" value="3" /></td>
+            <td><input class="btn" type="button" value="+" /></td>
+        </tr>
+        <tr>
+            <td><input class="btn" type="button" value="4" /></td>
+            <td><input class="btn" type="button" value="5" /></td>
+            <td><input class="btn" type="button" value="6" /></td>
+            <td><input class="btn" type="button" value="-" /></td>
+        </tr>
+        <tr>
+            <td><input class="btn" type="button" value="7" /></td>
+            <td><input class="btn" type="button" value="8" /></td>
+            <td><input class="btn" type="button" value="9" /></td>
+            <td><input class="btn" type="button" value="*" /></td>
+        </tr>
+        <tr>
+            <td><input class="btn" type="button" value="." /></td>
+            <td><input class="btn" type="button" value="0" /></td>
+            <td><input class="btn" type="button" value="=" /></td>
+            <td><input class="btn" type="button" value="/" /></td>
+        </tr>
+    </table>
+
+    <script type="text/javascript">
+        var txt = document.getElementById("show");
+        var obtn = document.getElementsByClassName("btn");
+        var arr = [];
+
+        //alert(obtn.length);
+        for (var i = 0; i < obtn.length; i++) {
+
+            obtn[i].onclick = function () {
+                //判断是否为数字
+                if (!isNaN(this.value) || this.value == ".") {
+                    if (txt.value.indexOf(".") == -1) {
+                        txt.value += this.value;
+                    } else if (this.value != ".") {
+                        txt.value += this.value;
+                    } else {
+                        if (txt.value.indexOf("+") != -1 || txt.value.indexOf("-") != -1 || txt.value.indexOf("*") != -1 || txt.value.indexOf("/") != -1) {
+                            //alert(1);
+                            arr[arr.length] = txt.value;
+                            txt.value = this.value;
+                        }
+                    }
+
+                } else if (this.value == "+" || this.value == "-" || this.value == "*" || this.value == "/") {
+                    if (txt.value.indexOf("+") == -1 || txt.value.indexOf("-") == -1 || txt.value.indexOf("*") == -1 || txt.value.indexOf("/") == -1) {
+                        arr[arr.length] = txt.value;
+                        txt.value = this.value;
+
+                    }
+                } else if (this.value == "=") {
+                    arr[arr.length] = txt.value;
+                    var str = "";
+                    for (var a in arr) {
+                        str += arr[a];
+                    }
+                    txt.value = eval(str);
+                    //eval(),,专门用来计算表达式标签。
+                } else if (this.value == "C") {
+                    txt.value = "";
+                    arr = [];
+                } else if (this.value == "DEL") {
+                    txt.value = txt.value.substr(0, txt.value.length - 1);
+                }
+                //console.log(arr);
+            }
+
+        }
+    </script>
+</body>
+
+</html>

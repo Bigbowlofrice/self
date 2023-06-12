@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>SELF-INTRODUCTION</title>
+  <link href="css/styles.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    .animated-button {
+      animation-name: pulse;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+    }
+
+    .green-button {
+      background-color: #808080;
+    }
+
+    button:hover {
+      cursor: pointer;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.1);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+
+
+
+
+
+    /* .content-section-a {
+      background-color: #aaaaaa;
+      padding: 50px 0;
+      border-top: 1px solid #e7e7e7;
+      border-bottom: 1px solid #e7e7e7;
+    } */
+
+    .section-heading {
+      font-size: 36px;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .icon {
+      display: block;
+      margin: 35px 70px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 2px solid #333;
+    }
+
+    .intro_p {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .intro_p a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .intro_p a:hover {
+      color: #007bff;
+      text-decoration: underline;
+    }
+
+    #myText {
+      font-size: 22px;
+      transition: font-size 0.2s ease-in-out;
+    }
+
+    #myText:hover {
+      font-size: 24px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-container animate__animated animate__fadeIn">
+    <div><img src="bigbowl.jpg" class="profile-picture" />
+      <h3>
+        👋 Hello, I'm 贾明泽!
+        <br />
+        <br />
+        📖
+        我的自我介绍
+        <a href="https://www.cnblogs.com/bloga/p/17178310.html">
+          <button class="animated-button green-button">点击</button>
+        </a>
+        <br />
+        <br />
+        🔔 我的"github"
+        <a href="https://github.com/Bigbowlofrice/ming.github.io">
+          <button class="animated-button green-button">点击</button>
+        </a>
+        <br />
+        <br>
+    </div>
+    <div style="background-color: #aaaaaa; padding: 200px;">
+      <div style="max-width: 1200; margin: -220px auto;">
+        <h1 style="font-size: 36px; text-align: center;">关于我</h1>
+        <div style="display: flex; justify-content: center; align-items: center; margin-top: 50px;">
+          <a href="https://github.com/yisha0307" target="_blank" style="margin-right: 20px;">
+            <i class="fa fa-github" aria-hidden="true"></i>
+          </a>
+          <div style="display: flex;">
+            <div style="margin-right: 30px;">
+              <img class="icon" src="./images/OIP-C.jpg" />
+              <p id="myText" style="text-align: center;">毕业于山轻工职业学院</p>
+            </div>
+            <div style="margin-right: 30px;">
+              <img class="icon" src="./images/icon_com.png" />
+              <p id="myText" style="text-align: center;">热爱前端出身的野生开发</p>
+            </div>
+            <div style="margin-right: 30px;">
+              <img class="icon" src="./images/icon_page.png" />
+              <p id="myText" style="text-align: center;">目前学习俩年半~</p>
+            </div>
+            <div>
+              <img class="icon" src="./images/icon_study.png" />
+              <p id="myText" style="text-align: center;">
+                <a href="https://baidu.com" target="_blank">咱们可以面试详聊♥</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1 style="font-size: 36px; text-align: center;">作品</h1>
+    </h3>
+    <div class="projects-grid">
+      <div class="project" onclick="window.location='STG/STG.html'"> one
+        <div class="project-logo-container">
+          <i class="fa-solid fa-golf-ball-tee"></i>
+        </div>
+
+        <div class="project-body">
+          <h1>猜测数字</h1>
+          <p>
+            一种简单有趣的猜数字游戏,每次猜测后给出提示，猜测者可以根据这些提示来逐渐缩小猜测范围，直到猜中秘密数字为止。
+          </p>
+        </div>
+      </div>
+
+      <div class="project" onclick="window.location='CALCULATOR/calculator.html'"> two
+        <div class="project-logo-container">
+          <i class="fa-solid fa-square-root-variable"></i>
+        </div>
+
+        <div class="project-body">
+          <h1>组件计算器</h1>
+          <p>
+            常用的计算工具，它可以用于执行各种数学运算，例如加法、减法、乘法和除法。
+          </p>
+        </div>
+      </div>
+
+      <div class="project" onclick="window.location='CLUTTOUS/Gluttonous Snake.html'"> three
+        <div class="project-logo-container">
+          <i class="fa-solid fa-wave-square"></i>
+        </div>
+
+        <div class="project-body">
+          <h1>贪吃蛇小游戏</h1>
+          <p>
+            贪吃蛇是一款经典的小游戏,游戏的玩法很简单,玩家需要控制一条蛇在屏幕上移动，吃掉食物并不断增长身体长度，同时要避免碰到屏幕边缘或自己的身体，否则游戏就会结束。
+          </p>
+        </div>
+      </div>
+      <div class="project" onclick="window.location='MIINESWEEPE/minesweepe.html'"> four
+        <div class="project-logo-container">
+          <i class="fa-solid fa-diagram-project"></i>
+        </div>
+
+        <div class="project-body">
+          <h1>扫雷小游戏</h1>
+          <p>
+            扫雷是一款经典的单人电脑游戏,最早出现在20世纪70年代的计算机上。游戏的目标是在一个方格图中找出所有的地雷,同时避免触雷。
+          </p>
+        </div>
+      </div>
+
+      <div class="project" onclick="window.location='WUZIQI/五子棋.html'"> five
+        <div class="project-logo-container">
+          <i class="fa-solid fa-mosquito"></i>
+        </div>
+
+        <div class="project-body">
+          <h1>五子棋小游戏</h1>
+          <p>
+            五子棋单机版是一款可以在电脑上单独运行的五子棋游戏，不需要联网即可进行游戏。以下是一个简单的五子棋单机版的介绍：
+
+            游戏开始时，玩家可以选择执黑子或白子。
+
+            游戏界面是一个 15x15 的棋盘，玩家可以通过鼠标点击来下棋子。
+
+            当一方在横、竖、斜线上连成五个棋子时，游戏结束，该玩家获胜。
+
+            如果棋盘被下满了，仍然没有任何一方获胜，则游戏平局结束。
+
+            在游戏结束后，玩家可以选择重新开始游戏或退出游戏。
+          </p>
+        </div>
+      </div>
+
+      <div class="project" onclick="window.location='TuiTuiTui/tui.html'"> six
+        <div class="project-logo-container">
+          <i class="fa-solid fa-compact-disc"></i>
+        </div>
+
+        <div class="project-body">
+          <h1>推箱子</h1>
+          <p>
+            推箱子游戏是一种益智类游戏，也叫“箱子推移”游戏。简单来说，规则是推动木箱到指定位置。玩家通常需要在一个由多个房间组成的迷宫中寻找出口。玩家需要在避免陷阱、越过障碍等多种挑战中，通过推动木箱，使其在规定的有限空间内达到指定位置，从而顺利过关。
+
+            推箱子游戏的主要特点是操作简单，游戏难度适中，可以锻炼玩家的观察力、判断力和空间想象力。每一关的难度都不相同，从简单到困难，需要花费一定的时间思考才可以完成。很多版本的推箱子游戏还带有关卡编辑器，玩家可以自定义编辑自己的地图，并与其他玩家分享。
+
+            现在，推箱子游戏已成为一种非常受欢迎的小游戏，大多数平台都有推箱子游戏的版本，有很多不同的游戏玩法和风格。
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜幸运数字游戏</title>
+    <link rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .guess-form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1.2em;
+            margin-right: 10px;
+        }
+
+        input[type="text"] {
+            font-size: 1.2em;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            font-size: 1.2em;
+            padding: 5px 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 10px 20px 30px 10px;
+            /* 上 右 下 左 */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        #result {
+            text-align: center;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+        <h1>猜幸运数字游戏</h1>
+        <p>我已经想好了一个1到10之间的数字,您需要在最少的猜测次数内猜对它。</p>
+        <button id="guess-button">开始猜</button>
+        <script src="script.js"></script>
+    </body>
+    <script>
+        let luckyNumber = Math.floor(Math.random() * 10) + 1;
+        let numberOfGuesses = 0;
+
+        function guessNumber() {
+            let guess = prompt("请输入您猜测的数字(1到10之间):");
+            numberOfGuesses++;
+
+            if (guess == luckyNumber) {
+                alert("恭喜您猜对了！您一共猜了" + numberOfGuesses + "次。");
+            } else if (guess > luckyNumber) {
+                alert("猜错了！您猜的数字太大了。");
+                guessNumber();
+            } else if (guess < luckyNumber) {
+                alert("猜错了！您猜的数字太小了。");
+                guessNumber();
+            }
+        }
+
+        let guessButton = document.getElementById("guess-button");
+        guessButton.addEventListener("click", guessNumber);
+
+    </script>
+</body>
+
+</html>
